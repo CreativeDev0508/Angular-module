@@ -1,0 +1,15 @@
+// This should contain the base styling for the app
+
+// Load the common colors and mixins files in a way that 
+// they will be referenced but not included in the output css
+@import (reference) "colors";
+@import (reference) "mixins";
+
+body {
+	color: @textActive;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: @textHeading;
+	.text-shadow-dark;
+}

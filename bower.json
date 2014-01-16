@@ -1,0 +1,43 @@
+{
+  "name": "app",
+  "version": "0.0.0",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components"
+  ],
+  "dependencies": {
+    "angular": "1.2.0-rc.3",
+    "angular-mocks": "1.2.0-rc.3",
+    "angular-route": "1.2.0-rc.3",
+    "angular-sanitize": "1.2.0-rc.3",
+    "angular-animate": "1.2.0-rc.3",
+    "lodash": "~2.4.1",
+    "jquery": "~2.0.3",    
+    "angular-ui-router": "~0.2.0",
+    "headjs": "https://raw.github.com/headjs/headjs/master/dist/1.0.0/head.load.min.js"
+  },
+  "exportsOverride": {
+    "angular": {
+      "": "*.*"
+    },
+    "lodash": {
+      "": "dist/lodash.min.js"
+    },
+    "jquery": {
+      "": "*.*"
+    },
+    "angular-resource": {
+      "": "*.*"
+    },
+    "angular-route": {
+      "": "*.*"
+    },
+    "angular-sanitize": {
+      "": "*.*"
+    },
+    "angular-animate": {
+      "": "*.*"
+    }
+  }
+}

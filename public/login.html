@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="lib/pure-built/pure-min.css">
+	<link rel="stylesheet" type="text/css" href="build/common/common.css" media="all">
+	<link rel="stylesheet" type="text/css" href="lib/font-awesome/font-awesome.css" media="all">
+</head>
+<body>
+<div class="login-container">
+	<div class="sf-logo-large"></div>
+
+	<form class="login-form pure-form">
+		<fieldset class="pure-group">
+			<input id="username" type="text" class="pure-input-1" placeholder="Email or Username">
+		</fieldset>
+
+		<fieldset class="pure-group">
+			<input id="password" type="password" class="pure-input-1" placeholder="Password">
+		</fieldset>
+
+		<button type="submit" class="pure-button pure-input-1 pure-button-primary large">LOG IN</button>
+	</form>
+
+	<div class="pure-g login-options" style="height: 92px;">
+		<div class="pure-u-1-2"><label><input type="checkbox">Remember my login</label></div>
+		<div class="pure-u-1-2" style="text-align: right;">
+			<div><a href="">Forgot log in?</a></div>
+			<div style="margin-top: 12px;"><a href="">Register for an account</a></div>
+		</div>
+	</div>
+
+	<div style="text-align: center; font-size: 11px;">© 2013 Simplifile, LC All Rights Reserved</div>
+</div>
+<script src="lib/socket.io-client/dist/socket.io.min.js"></script>
+<script src="lib/smallmouth/build/smallmouth.js"></script>
+<script src="lib/jquery/jquery.min.js"></script>
+<script>
+	var $username = $('#username'),
+		$password = $('#password');
+
+	$('.login-form').submit(function(event) {
+		var username = $username.val(),
+			password = $password.val();
+
+		if(!username) $username.addClass('ng-invalid');
+		if(!password) $password.addClass('ng-invalid');
+
+		if(username && password) {
+			var connection = new SmallMouth.Resource("http://sputnik.simplifile.com:3000");
+
+			var login = new SmallMouth.SimpleLogin(connection, function(error, user) {
+				if(error) {
+					$username.addClass('ng-invalid');
+					$password.addClass('ng-invalid');
+				} else {
+					window.location.replace("/");
+				}
+			});
+
+			login.login('password', {
+				username: username,
+				password: password,
+				rememberMe: true
+			});
+		}
+
+		event.preventDefault();
+	});
+</script>
+</body>
+</html>
