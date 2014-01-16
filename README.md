@@ -16,7 +16,7 @@ Run `npm install` to initially set the project up. The following grunt tasks are
 
 # Directory Structure
 
-The source is stored within `public/src`. Each directory within this folder represents
+Start a static webserver (node-static) within the public directory to see the sample app run. The source is stored within `public/src`. Each directory within this folder represents
  a separate angular module which be built and compiled down to separate files. The `public/build` directory is mirrored with the `public/src` directory except that it contains a primary built JavaScript and CSS file for the entire module which can be loaded into the browser. Every JavaScript file in each module, excluding files that end in `.spec.js` will get compiled into the built files. Likewise, every LESS file will get compiled into a single CSS file for each module.
 
 The project includes multiple Grunt plugins for making Angular develoment easier including:
