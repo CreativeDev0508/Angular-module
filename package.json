@@ -1,15 +1,14 @@
 {
   "name": "sf",
   "version": "0.0.0",
-  "description": "Simplifile Frontent Application",
-  "homepage": "http://simplifile.com",
+  "description": "Frontent Application",
   "author": {
     "name": "Bret Little"
   },
   "contributors": [
     {
       "name": "Bret Little",
-      "url": "blittle@simplifile.com"
+      "url": "bret.little@gmail.com"
     }
   ],
   "dependencies": {
