@@ -31,7 +31,7 @@
 		</div>
 	</div>
 
-	<div style="text-align: center; font-size: 11px;">© 2013 Simplifile, LC All Rights Reserved</div>
+	<div style="text-align: center; font-size: 11px;">© 2013 Bret Little All Rights Reserved</div>
 </div>
 <script src="lib/socket.io-client/dist/socket.io.min.js"></script>
 <script src="lib/smallmouth/build/smallmouth.js"></script>
@@ -48,7 +48,7 @@
 		if(!password) $password.addClass('ng-invalid');
 
 		if(username && password) {
-			var connection = new SmallMouth.Resource("http://sputnik.simplifile.com:3000");
+			var connection = new SmallMouth.Resource("http://localhost:3000");
 
 			var login = new SmallMouth.SimpleLogin(connection, function(error, user) {
 				if(error) {
